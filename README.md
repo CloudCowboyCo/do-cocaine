@@ -13,9 +13,11 @@ do_token:
 droplet_kit
 
 
-`gem install droplet_kit`
+```bash
+gem install droplet_kit
+```
 
 yaml
-
-
-`gem install yaml` 
+```bash
+gem install yaml
+```
