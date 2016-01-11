@@ -2,7 +2,6 @@ require './droplet_deploy.rb'
 require 'droplet_kit'
 require './ip_info.rb'
 require './userdata_puppet.rb'
-require 'pry'
 require 'yaml'
 
 # Initialize configuration variables
