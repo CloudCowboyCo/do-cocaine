@@ -44,7 +44,7 @@ ssldir=/var/lib/puppet/ssl
 rundir=/var/run/puppet
 factpath=$vardir/lib/facter
 certname = #{system_name}
-dns_alt_names = puppet,puppet.nyc2.example.com
+dns_alt_names = puppet,puppet.nyc2.example.com,#{system_name}
 
 [master]
 # These are needed when the puppetmaster is run by passenger
