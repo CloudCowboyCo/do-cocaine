@@ -1,15 +1,24 @@
-require './droplet_deploy.rb'
-require 'droplet_kit'
-require './ip_info.rb'
+
+require './droplet_deploy.rb'# Calls droplet
+require 'droplet_kit' # Loads DigitalOcean's gem 
+require './ip_info.rb' 
 require './userdata_puppet.rb'
+require 'pry'
 require 'yaml'
 
 # Initialize configuration variables
 cnf = YAML::load_file(File.join(__dir__, 'config.yml'))
-@token=cnf["do_token"]["admin"]
-system_name = "puppet"+rand(1000).to_s	
-systemInfo = {"name" => system_name, "region" => "nyc3", "size" => "1gb", "image" => "ubuntu-14-04-x64", "user_data" => userdata_puppet(system_name), "ssh_keys" => ['1520383']}
+config=cnf[:droplet]
+token=cnf[:admin][:token]
+# Date stampe the name if no droplet name provided
+if config[:name] == "default"
+    config[:name] = Time.now.to_s.split.join.delete!"-:" # TODO Add ability to group with prefix
+end
+# set user_date with proper hostname 
+config["user_data"] = userdata_puppet(config[:name].to_s)
 
-ip_public = deploy_droplet(systemInfo)
-puts "Here we go again......"
-puts ip_public 
+ip_public = deploy_droplet(config, token)
+p ""
+p 'To access your system use:'
+p ip_public[0] 
+
