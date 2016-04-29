@@ -1,0 +1,9 @@
+ :droplet:
+     :name: default
+     :region:    nyc3
+     :size: 1gb
+     :image: ubuntu-14-04-x64
+     :ssh_keys: 1520383
+     :private_networking: true
+ :admin:
+  :token: PutTokenHerePleaseAndThankYou
