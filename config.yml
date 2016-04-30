@@ -1,7 +1,7 @@
  :droplet:
      :name: default
      :region:    nyc3
-     :size: 1gb
+     :size: 1gb 
      :image: ubuntu-14-04-x64
      :ssh_key: 123456
      :private_networking: true

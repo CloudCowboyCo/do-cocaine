@@ -1,20 +1,13 @@
 require_relative "./droplet_deploy.rb"
+require_relative "./userdata_puppet_client.rb"
 require "test/unit"
 
-class TestSimpleNumber < Test::Unit::TestCase
+class TestDroplets < Test::Unit::TestCase
 
-    def test_simple
+    def test_config
         true
-        #assert_equal(4, SimpleNumber.new(2).add(2) )
-        #assert_equal(4, SimpleNumber.new(2).multiply(2) )
     end
-
-##    def test_typecheck
-#        assert_raise( RuntimeError ) { SimpleNumber.new('a') }
-#    end
-
-##    def test_failure
-#        assert_equal(3, SimpleNumber.new(2).add(2), "Adding doesn't work" )
-#    end
-
+    
+    def test_userdata_puppet_client
+    end
 end
