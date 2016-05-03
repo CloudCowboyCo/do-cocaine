@@ -9,5 +9,5 @@ def deploy_droplet(config, token)
   # This return might want to return creation ID.
   # returning of the ID would allow for further operations on this node.
   # while the next area can still obtain IP.
-  return ip_info(client.droplets.find(id: create.id.to_s))
+  return do_ip_info(client.droplets.find(id: create.id.to_s))
 end

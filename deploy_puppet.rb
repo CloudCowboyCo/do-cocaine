@@ -1,7 +1,7 @@
 
 require './droplet_deploy.rb'# Calls droplet
 require 'droplet_kit' # Loads DigitalOcean's gem 
-require './ip_info.rb' 
+require './do_helpers.rb' 
 require './userdata_puppet.rb'
 require 'pry'
 require 'yaml'
@@ -21,4 +21,3 @@ ip_public = deploy_droplet(config, token)
 p ""
 p 'To access your system use:'
 p ip_public[0] 
-

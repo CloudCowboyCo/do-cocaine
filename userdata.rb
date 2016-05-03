@@ -93,3 +93,8 @@ puppet master --verbose --no-daemonize
 service apache2 start
 EOM
 end
+
+def userdata_puppet_mysql()
+return <<-EOM
+EOM
+end
